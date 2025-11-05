@@ -10,4 +10,19 @@ public class MainController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/assistidos")
+    public String assistidos() {
+        return "assistidos";
+    }
+
+    @GetMapping("/andamento")
+    public String andamento() { 
+        return "andamento";
+    }       
+
+    @GetMapping("/desejados")
+    public String desejados() {
+        return "desejados";
+    }
 }
