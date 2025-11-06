@@ -1,25 +1,99 @@
-h1 {
-    color: #c62368;
-    text-align: center;
-    font-size: 2.5em;
-    margin-top: 20px;
-    text-transform: uppercase;
-    font-family: 'Arial', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-/* Ensure the document fills the viewport so body background is visible */
 html, body {
     height: 100%;
-    margin: 0; /* reset default margin so background reaches edges */
+    margin: 0;
 }
 
 body {
     min-height: 100vh;
     margin: 0;
-    background-color: #ffcdc5;
-
-    border: 40px solid transparent;
-    border-image: url('/img/flores-borda.jpg') 60 round; /* a imagem precisa ter bordas */
+    background: linear-gradient(180deg, #f2e9e6 0%, #ffc8d9 100%); 
     box-sizing: border-box;
+    padding-top: 40px;
+    padding-bottom: 40px; 
 }
 
+h1 {
+    color: #c62368;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 0; 
+    margin-bottom: 5px; 
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px; 
+}
+
+h1 span {
+    display: block; 
+    font-family: 'Great Vibes', cursive; 
+    text-transform: none; 
+    font-size: 1.5em; 
+    line-height: 0.8; 
+    color: #c62368; 
+}
+
+ul {
+    list-style: none; 
+    padding: 0;
+    margin: 40px auto 20px auto; /* Centraliza horizontalmente e ajusta margens */
+    display: flex; /* Permite colocar os itens lado a lado */
+    justify-content: center; /* Centraliza os itens na horizontal */
+    max-width: 80%;
+}
+
+ul li {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 10px;
+    padding: 10px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #c62368; /* Cor do texto dos cabeçalhos */
+    border-bottom: 3px solid #ff92ae; /* Borda inferior sutil para destacar */
+}
+
+ul li a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: inherit; /* Herda a cor do li */
+    display: block;
+    padding-bottom: 5px;
+}
+
+.conteudo-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre as caixas */
+    padding: 20px;
+}
+
+.caixa {
+    background-color: rgba(255, 255, 255, 0.7); /* Branco transparente */
+    border: 2px solid #ff92ae; /* Borda rosa mais clara */
+    border-radius: 5px;
+    width: 30%; /* Três caixas lado a lado, 30% cada + espaçamento */
+    min-height: 350px; /* Altura mínima para simular a imagem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.frase-rodape {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #c62368;
+}
+
+.frase-rodape p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    margin: 0;
+}
+
+.linha-divisoria {
+    width: 60%;
+    margin: 10px auto;
+    border: 0;
+    border-top: 2px solid #ff92ae;
+}
