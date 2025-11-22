@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login • Diário de Doramas</title>
     <link rel="stylesheet" th:href="@{/css/login.css}">
+
+    <script th:inline="javascript">
+    window.loginErro = /*[[${erroLogin} ? true : false]]*/ false;
+    </script>
+    
+    <script src="/js/login.js"></script>
 </head>
 <body>
 
