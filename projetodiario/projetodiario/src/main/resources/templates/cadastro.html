@@ -7,11 +7,11 @@
     <link rel="stylesheet" th:href="@{/css/cadastro.css}">
 
     <script th:inline="javascript">
-    window.cadastroOk = false;
-    window.erroCadastro = false;
+    window.cadastroOk = /*[[${cadastroOk}]]*/ false;
+    window.erroCadastro = /*[[${erroCadastro}]]*/ false;
     </script>
 
-    <script src="/js/cadastro.js"></script>
+    <script th:src="@{/js/cadastro.js}"></script>
 </head>
 <body>
 

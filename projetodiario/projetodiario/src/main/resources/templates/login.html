@@ -7,7 +7,8 @@
     <link rel="stylesheet" th:href="@{/css/login.css}">
 
     <script th:inline="javascript">
-    window.loginErro = /*[[${erroLogin} ? true : false]]*/ false;
+    window.loginErro = /*[[${erroLogin}]]*/ false;
+    window.loginOk = /*[[${loginOk}]]*/ false;
     </script>
     
     <script src="/js/login.js"></script>

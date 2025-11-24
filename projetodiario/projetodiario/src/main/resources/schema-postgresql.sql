@@ -14,3 +14,30 @@ CREATE TABLE if NOT EXISTS doramas (
     rating DECIMAL(2, 1),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE doramas
+    RENAME COLUMN title TO nome;
+
+ALTER TABLE doramas
+    RENAME COLUMN description TO anotacao;
+
+ALTER TABLE doramas
+    RENAME COLUMN rating TO nota;
+
+ALTER TABLE doramas
+    ALTER COLUMN nota TYPE INTEGER USING nota::INTEGER;
+
+ALTER TABLE doramas
+    DROP COLUMN release_date;
+
+ALTER TABLE doramas
+    ADD COLUMN IF NOT EXISTS status VARCHAR(30) DEFAULT 'desejado';
+
+ALTER TABLE doramas
+    ADD COLUMN IF NOT EXISTS user_id INTEGER;
+
+ALTER TABLE doramas
+    ADD CONSTRAINT fk_dorama_user
+    FOREIGN KEY (user_id)
+    REFERENCES users(id)
+    ON DELETE CASCADE;

@@ -70,9 +70,11 @@ ul li a {
 }
 
 .frase-rodape {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
     color: #c62368;
 }
 
@@ -93,3 +95,24 @@ img {
     width: 100px;
     height: 100px;
 }
+
+.botao-sair {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border: 2px solid #c62368;
+    color: #c62368;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.botao-sair:hover {
+    background-color: #ffc8d9;
+    color: #8e1343;
+}
+

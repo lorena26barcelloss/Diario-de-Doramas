@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    console.debug('cadastro.js:', 'cadastroOk=', window.cadastroOk, 'erroCadastro=', window.erroCadastro);
+
     if (window.erroCadastro) {
         alert("Esse e-mail já está cadastrado!");
     }

@@ -1,4 +1,4 @@
-package com.diario.projetodiario;
+package com.diario.projetodiario.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,8 +56,9 @@ public class UserController {
 
         if (user != null && user.getSenha().equals(senha)) {
             session.setAttribute("usuarioLogado", user);
-            // redireciona para a home (MainController trata sessão)
-            return "redirect:/";
+            // sucesso de login - passar para template
+            model.addAttribute("loginOk", true);
+            return "login";
         }
 
         // erro de autenticação - o template login.html mostrará o alerta

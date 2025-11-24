@@ -5,14 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desejados</title>
 
-     <link rel="stylesheet" th:href="@{/css/index.css}">
-     <link rel="stylesheet" th:href="@{/css/desejados.css}">
-
+    <link rel="stylesheet" th:href="@{/css/index.css?v=1}">
+    <link rel="stylesheet" th:href="@{/css/desejados.css?v=1}">
 </head>
 <body>
-    <h1> 
-        DESEJADOS
-    </h1>
-    <a th:href="@{/}">Voltar à página inicial</a>
+    <a class="botao-voltar" th:href="@{/}">Voltar</a>
+    <h1>DESEJADOS</h1>
+    <div class="form-box">
+        <form th:action="@{/desejados/add}" method="post">
+            
+            <label for="nome">Nome do Dorama</label>
+            <input type="text" name="nome" id="nome" required>
+
+            <label for="anotacao">Anotação (opcional)</label>
+            <textarea name="anotacao" id="anotacao"></textarea>
+
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>
+
+    <!-- Se lista estiver vazia -->
+    <p class="nenhum-dorama"
+       th:if="${listaDesejados == null || listaDesejados.isEmpty()}">
+       Não há doramas de seu interesse nesse momento
+    </p>
+
+    <!-- Cards de doramas -->
+    <div class="cards-container" th:if="${listaDesejados != null}">
+        <div class="card"
+             th:each="dorama : ${listaDesejados}">
+            
+            <h3 th:text="${dorama.nome}"></h3>
+            <p th:if="${dorama.anotacao != null}" 
+               th:text="${dorama.anotacao}"></p>
+
+            <div class="card-actions">
+                <form th:action="@{/desejados/toAndamento}" method="post">
+                    <input type="hidden" name="id" th:value="${dorama.id}">
+                    <button type="submit">Mover para Em Andamento</button>
+                </form>
+
+                <form th:action="@{/desejados/toAssistidos}" method="post">
+                    <input type="hidden" name="id" th:value="${dorama.id}">
+                    <button type="submit">Mover para Assistidos</button>
+                </form>
+
+                <form th:action="@{/desejados/delete}" method="post">
+                    <input type="hidden" name="id" th:value="${dorama.id}">
+                    <button type="submit" class="delete">Excluir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1,6 +1,89 @@
-a {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
     color: #c62368;
-    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+.botao-voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border: 2px solid #c62368;
+    color: #c62368;
+    padding: 8px 15px;
+    border-radius: 8px;
     font-weight: bold;
-    text-decoration: none; 
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.botao-voltar:hover {
+    background-color: #ffc8d9;
+    color: #8e1343;
+}
+
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.card {
+    background: white;
+    border: 2px solid #c62368;
+    border-radius: 10px;
+    padding: 20px;
+    width: 260px;
+    text-align: left;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #c62368;
+}
+
+.actions {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+}
+
+.btn.mover {
+    background-color: #b47dff;
+}
+
+.btn.excluir {
+    background-color: #ff4d6d;
+}
+
+.btn.salvar {
+    background-color: #3fb878;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-top: 5px;
 }

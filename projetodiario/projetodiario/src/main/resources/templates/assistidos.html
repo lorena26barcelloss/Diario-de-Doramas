@@ -5,14 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistidos</title>
 
-     <link rel="stylesheet" th:href="@{/css/index.css}">
-     <link rel="stylesheet" th:href="@{/css/assistidos.css}">
-
+    <link rel="stylesheet" th:href="@{/css/index.css?v=1}">
+    <link rel="stylesheet" th:href="@{/css/assistidos.css?v=1}">
 </head>
 <body>
-    <h1> 
-        ASSISTIDOS
-    </h1>
-    <a th:href="@{/}">Voltar à página inicial</a>
+    <a class="botao-voltar" th:href="@{/}">Voltar</a>
+    <h1>ASSISTIDOS</h1>
+    <div class="cards-container">
+
+        <div th:each="dorama : ${doramas}" class="card">
+
+            <h2 th:text="${dorama.nome}">Nome do Dorama</h2>
+
+            <p><strong>Anotação:</strong> <span th:text="${dorama.anotacao}"></span></p>
+
+            <form th:action="@{/assistidos/avaliar}" method="post">
+                <input type="hidden" name="id" th:value="${dorama.id}">
+
+                <label>Nota:</label>
+                <input type="number" min="0" max="10" name="nota"
+                       th:value="${dorama.nota}" required>
+
+                <button type="submit" class="btn salvar">Salvar avaliação</button>
+            </form>
+
+            <div class="actions">
+                <!-- mover de volta para andamento -->
+                <a class="btn mover"
+                   th:href="@{/assistidos/voltar-andamento/{id}(id=${dorama.id})}">
+                    Mover para andamento
+                </a>
+
+                <!-- excluir -->
+                <a class="btn excluir"
+                   th:href="@{/assistidos/deletar/{id}(id=${dorama.id})}">
+                    Excluir
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 </html>

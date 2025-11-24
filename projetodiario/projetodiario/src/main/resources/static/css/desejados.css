@@ -4,3 +4,121 @@ a {
     font-weight: bold;
     text-decoration: none; 
 }
+
+.botao-voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border: 2px solid #c62368;
+    color: #c62368;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.botao-voltar:hover {
+    background-color: #ffc8d9;
+    color: #8e1343;
+}
+
+
+.form-box {
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #ff92ae;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.form-box label {
+    font-family: Arial, sans-serif;
+    color: #c62368;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.form-box input,
+.form-box textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ff92ae;
+    border-radius: 8px;
+    margin-top: 5px;
+    resize: none;
+}
+
+.form-box button {
+    background: #ff92ae;
+    color: #8e1343;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.nenhum-dorama {
+    text-align: center;
+    font-size: 1.2em;
+    color: #8e1343;
+    margin-top: 60px;
+    font-family: Arial, sans-serif;
+}
+
+.cards-container {
+    width: 90%;
+    max-width: 950px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 2px solid #ff92ae;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #c62368;
+}
+
+.card p {
+    font-family: Arial, sans-serif;
+    color: #6a2b47;
+    margin-top: 8px;
+}
+
+.card-actions {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-actions button {
+    background: #ffc8d9;
+    color: #8e1343;
+    font-weight: bold;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card-actions button.delete {
+    background: #ff6b6b;
+    color: white;
+}

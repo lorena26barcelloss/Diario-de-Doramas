@@ -1,9 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-d4ggvsali9vc73dk1vg0-a.oregon-postgres.render.com:5432/diariodoramas
+    url: jdbc:postgresql://dpg-d4ggvsali9vc73dk1vg0-a.oregon-postgres.render.com:5432/diariodoramas?sslmode=require
     username: diariodoramas_user
     password: IkRXV8LVJYA4HRW6ElB4MMGGs5Yzd1Xe
     driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
 
   jpa:
     hibernate:

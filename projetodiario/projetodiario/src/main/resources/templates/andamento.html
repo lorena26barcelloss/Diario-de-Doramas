@@ -5,14 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Em Andamento</title>
 
-     <link rel="stylesheet" th:href="@{/css/index.css}">
-     <link rel="stylesheet" th:href="@{/css/andamento.css}">
-
+    <link rel="stylesheet" th:href="@{/css/index.css?v=1}">
+    <link rel="stylesheet" th:href="@{/css/andamento.css?v=1}">
 </head>
 <body>
-    <h1> 
-        EM ANDAMENTO
-    </h1>
-    <a th:href="@{/}">Voltar à página inicial</a>
+    <a class="botao-voltar" th:href="@{/}">Voltar</a>
+    <h1>EM ANDAMENTO</h1>
+    <p class="nenhum-dorama"
+       th:if="${listaAndamento == null || listaAndamento.isEmpty()}">
+       Você ainda não tem doramas em andamento 🙂
+    </p>
+
+    <!-- Cards -->
+    <div class="cards-container" th:if="${listaAndamento != null}">
+        <div class="card" th:each="dorama : ${listaAndamento}">
+            
+            <h3 th:text="${dorama.nome}"></h3>
+            <p th:if="${dorama.anotacao != null}" th:text="${dorama.anotacao}"></p>
+
+            <div class="card-actions">
+                <form th:action="@{/desejados/toAssistidos}" method="post">
+                    <input type="hidden" name="id" th:value="${dorama.id}">
+                    <button type="submit">Mover para Assistidos</button>
+                </form>
+
+                <form th:action="@{/desejados/delete}" method="post">
+                    <input type="hidden" name="id" th:value="${dorama.id}">
+                    <button type="submit">Excluir</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>
